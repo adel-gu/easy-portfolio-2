@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
+import { cn } from '@/lib/utils';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--space-grotesk',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +20,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.className}>{children}</body>
+      <body
+        className={cn(
+          'min-h-screen bg-background font-space-grotesk antialiased',
+          spaceGrotesk.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
