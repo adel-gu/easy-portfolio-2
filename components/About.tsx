@@ -3,13 +3,13 @@ import IconCloud from './magicui/icon-cloud';
 const About = () => {
   return (
     <section>
-      <div className="container mx-auto">
+      <div className="container mx-auto h-screen">
         <div className="flex justify-between items-center">
           <div className="text-left space-y-8 w-[600px]">
-            <h2 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-6xl font-medium leading-none text-transparent from-slate-200 to-neutral-700">
+            <h2 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-8xl font-medium leading-none text-transparent from-slate-200 to-neutral-700">
               About me
             </h2>
-            <p className="font-sans line-clamp-6">
+            <p className="font-sans text-lg text-neutral-300">
               I am a passionate software engineer with a focus on front-end
               technologies. I excel in collaborative environments, where I can
               contribute to the success of others. If you're looking for an
