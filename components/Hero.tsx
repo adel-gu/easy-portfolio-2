@@ -10,13 +10,14 @@ const Hero = () => {
       <div className="container mx-auto h-full">
         <div className="text-center h-full flex flex-col items-center justify-center gap-12">
           <div className="flex flex-col items-center gap-y-2">
-            <Avatar className="w-14 h-14 grayscale">
+            <Avatar className="w-14 h-14">
               <AvatarImage src="https://avatars.githubusercontent.com/u/68030297?s=400&u=5a0e36cd8954d298b71f768ddbe3c4b97c2b540b&v=4" />
               <AvatarFallback>AG</AvatarFallback>
             </Avatar>
             <span className="text-sm font-sans text-neutral-500">
               Adel Guitoun
             </span>
+
             <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-center text-8xl font-medium leading-none text-transparent from-slate-200 to-neutral-700">
               Crafting Memorable <br />
               User & Developer Experiences
@@ -46,7 +47,7 @@ const Hero = () => {
           maxOpacity={0.2}
           duration={5}
           repeatDelay={1}
-          className="h-[150%] inset-y-[-30%] inset-x-2"
+          className="h-[150%] inset-y-[-30%] inset-x-[2px]"
         />
       </div>
     </section>
