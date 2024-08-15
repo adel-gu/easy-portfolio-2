@@ -1,30 +1,41 @@
-import Link from 'next/link';
-import { Dock, DockIcon } from '@/components/magicui/dock';
 import AnimatedGridPattern from '@/components/magicui/animated-grid-pattern';
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
+import AnimatedShinyText from './magicui/animated-shiny-text';
+import { cn } from '@/lib/utils';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="container mx-auto h-full">
         <div className="text-center h-full flex flex-col items-center justify-center gap-12">
-          <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-center text-8xl font-medium leading-none text-transparent from-slate-200 to-slate-600">
-            Crafting Memorable <br />
-            User Experiences
-            <br />
-            for Business Success
-          </h1>
+          <div className="flex flex-col items-center gap-y-2">
+            <Avatar className="w-14 h-14 grayscale">
+              <AvatarImage src="https://avatars.githubusercontent.com/u/68030297?s=400&u=5a0e36cd8954d298b71f768ddbe3c4b97c2b540b&v=4" />
+              <AvatarFallback>AG</AvatarFallback>
+            </Avatar>
+            <span className="text-sm font-sans text-neutral-500">
+              Adel Guitoun
+            </span>
+            <h1 className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b bg-clip-text text-center text-8xl font-medium leading-none text-transparent from-slate-200 to-neutral-700">
+              Crafting Memorable <br />
+              User & Developer Experiences
+              <br />
+              for Business Success
+            </h1>
+          </div>
 
-          <div className="relative">
-            <Dock magnification={60} distance={100}>
-              {socialLinks.map((socialLink) => (
-                <DockIcon className="bg-slate-200/10">
-                  <Link key={socialLink.name} href={socialLink.path}>
-                    {socialLink.icon}
-                  </Link>
-                </DockIcon>
-              ))}
-            </Dock>
+          <div className="z-10 flex items-center justify-center">
+            <div
+              className={cn(
+                'group rounded-full border text-base text-white transition-all ease-in hover:cursor-pointer border-white/5 bg-neutral-900 hover:bg-neutral-800',
+              )}
+            >
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:duration-300 hover:text-neutral-400 text-xl font-semibold font-sans">
+                <span>👋 Let's have a chat</span>
+                <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+              </AnimatedShinyText>
+            </div>
           </div>
         </div>
       </div>
@@ -35,34 +46,11 @@ const Hero = () => {
           maxOpacity={0.2}
           duration={5}
           repeatDelay={1}
-          className="h-[150%] inset-y-[-30%]"
+          className="h-[150%] inset-y-[-30%] inset-x-2"
         />
       </div>
     </section>
   );
 };
-
-const socialLinks = [
-  {
-    name: 'linkedin',
-    icon: <Linkedin />,
-    path: '#',
-  },
-  {
-    name: 'github',
-    icon: <Github />,
-    path: '#',
-  },
-  {
-    name: 'twitter',
-    icon: <Twitter />,
-    path: '#',
-  },
-  {
-    name: 'email',
-    icon: <Mail />,
-    path: '#',
-  },
-];
 
 export default Hero;
